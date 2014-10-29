@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<!-- Specified Struts 2 configuration files DTD information -->
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+        
+<struts>
+    <package name="powerwind" extends="struts-default">
+    	<interceptors>
+			<interceptor name="myInterception" class="intercept.myIntercept"/>
+		</interceptors>
+        <action name="HelloWorld" class="strutsDemo.HelloWorld">
+        	<interceptor-ref name="defaultStack" />
+        	<interceptor-ref name="myInterception" />
+            <result>HelloWorld.jsp</result>
+        </action>
+    </package>
+</struts>
